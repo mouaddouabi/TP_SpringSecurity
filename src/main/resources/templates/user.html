@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Page</title>
+</head>
+<body>
+<h1>Information de l'utilisateurs</h1>
+<form th:action="@{/logout}" method="POST">
+    <input type="submit" value="Logout"/>
+</form>
+<table>
+    <tr th:each="client : ${clients}">
+        <td th:text="${client.id}">Id</td>
+        <td th:text="${client.nom}">Name</td>
+        <td th:text="${client.prenom}">Name</td>
+    </tr>
+</table>
+
+</body>
+</html>
